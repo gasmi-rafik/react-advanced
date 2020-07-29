@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'; 
 import './App.css';
+import ProductTable from './ProductTable';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
+const products =[{
+  price :'1500 000',
+  name :'PC GAMER',
+  category : {
+    Electronics :'Electronic',
+    Clothes: 'clothes',
+  }
+ } 
+  ];
+
+
+function App(props) {
+
+	return  (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <h1>hello</h1>
+      
+
+      {products.map(produit => <table>
+        <tr>
+         <td>
+         <ProductTable el={produit } />
+          </td>
+         </tr>
+         
+          </table>
+        
+      )}
+      </div>
   );
-}
+      }
+  // App.propTypes = {
+  //   name: PropTypes.string,
+  
+  //   price: PropTypes.string,
+  
+  //   category: PropTypes.string
+  // };
 
 export default App;
